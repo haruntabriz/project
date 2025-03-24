@@ -1,10 +1,9 @@
 from . import db
 from datetime import datetime, timezone,timedelta
 from itsdangerous import BadSignature, SignatureExpired, URLSafeTimedSerializer
-from flask_login import UserMixin
 
 # User Model
-class User(db.Model,UserMixin):
+class User(db.Model):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
